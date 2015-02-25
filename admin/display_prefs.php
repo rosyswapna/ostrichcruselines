@@ -109,7 +109,8 @@ check_row(_("Show GL Information:"), 'show_gl', user_show_gl_info());
 
 check_row(_("Show Item Codes:"), 'show_codes', user_show_codes());
 
-themes_list_row(_("Theme:"), "theme", user_theme());
+//themes_list_row(_("Theme:"), "theme", user_theme());
+hidden('theme',user_theme());
 
 /* The array $themes is set up in config.php for modifications
 possible separators can be added by modifying the array definition by editing that file */

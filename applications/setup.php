@@ -65,16 +65,16 @@ class setup_app extends application
 			"admin/backups.php?", 'SA_BACKUP', MENU_SYSTEM);
 		$this->add_rapp_function(2, _("Create/Update &Companies"),
 			"admin/create_coy.php?", 'SA_CREATECOMPANY', MENU_UPDATE);
-		$this->add_rapp_function(2, _("Install/Update &Languages"),
-			"admin/inst_lang.php?", 'SA_CREATELANGUAGE', MENU_UPDATE);
+		/*$this->add_rapp_function(2, _("Install/Update &Languages"),
+			"admin/inst_lang.php?", 'SA_CREATELANGUAGE', MENU_UPDATE);*/
 		$this->add_rapp_function(2, _("Install/Activate &Extensions"),
 			"admin/inst_module.php?", 'SA_CREATEMODULES', MENU_UPDATE);
-		$this->add_rapp_function(2, _("Install/Activate &Themes"),
+		/*$this->add_rapp_function(2, _("Install/Activate &Themes"),
 			"admin/inst_theme.php?", 'SA_CREATEMODULES', MENU_UPDATE);
 		$this->add_rapp_function(2, _("Install/Activate &Chart of Accounts"),
 			"admin/inst_chart.php?", 'SA_CREATEMODULES', MENU_UPDATE);
 		$this->add_rapp_function(2, _("Software &Upgrade"),
-			"admin/inst_upgrade.php?", 'SA_SOFTWAREUPGRADE', MENU_UPDATE);
+			"admin/inst_upgrade.php?", 'SA_SOFTWAREUPGRADE', MENU_UPDATE);*/
 
 		$this->add_extensions();
 	}

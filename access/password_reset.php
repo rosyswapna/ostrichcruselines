@@ -38,7 +38,7 @@ function defaultCompany()
 	echo "<head profile=\"http://www.w3.org/2005/10/profile\"><title>$title</title>\n";
    	echo "<meta http-equiv='Content-type' content='text/html; charset=$encoding' />\n";
 	echo "<link href='$path_to_root/themes/$def_theme/default.css' rel='stylesheet' type='text/css'> \n";
- 	echo "<link href='$path_to_root/themes/default/images/favicon.ico' rel='icon' type='image/x-icon'> \n";
+ 	//echo "<link href='$path_to_root/themes/default/images/favicon.ico' rel='icon' type='image/x-icon'> \n";
 	send_scripts();
 	echo $js;
 	echo "</head>\n";

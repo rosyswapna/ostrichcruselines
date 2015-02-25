@@ -37,3 +37,13 @@
 [24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
 [24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
 [24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[25-Feb-2015 09:55:16 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/behaviour.js): Permission denied
+[25-Feb-2015 09:55:16 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/login.js): Permission denied
+[25-Feb-2015 09:55:16 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/JsHttpRequest.js): Permission denied
+[25-Feb-2015 09:55:16 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/utils.js): Permission denied
+[25-Feb-2015 09:55:16 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/inserts.js): Permission denied
+[25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/behaviour.js): Permission denied
+[25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/login.js): Permission denied
+[25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/JsHttpRequest.js): Permission denied
+[25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/utils.js): Permission denied
+[25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/inserts.js): Permission denied
