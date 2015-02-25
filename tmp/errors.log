@@ -2,3 +2,38 @@
 [24-Feb-2015 11:35:51 UTC] 0::session.inc:401: include_once(): Failed opening './tmp/faillog.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear')
 [24-Feb-2015 11:35:54 UTC] 0::session.inc:401: include_once(./tmp/faillog.php): failed to open stream: No such file or directory
 [24-Feb-2015 11:35:54 UTC] 0::session.inc:401: include_once(): Failed opening './tmp/faillog.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear')
+[24-Feb-2015 12:05:43 UTC] 0:admin:company_preferences.php:79: move_uploaded_file(../company/0/images/ostrich_logo.png): failed to open stream: Permission denied
+[24-Feb-2015 12:05:43 UTC] 0:admin:company_preferences.php:79: move_uploaded_file(): Unable to move '/tmp/phpOFiPZC' to '../company/0/images/ostrich_logo.png'
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:43 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:05:47 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
+[24-Feb-2015 12:06:11 UTC] 0:admin:JsHttpRequest.php:470: mb_convert_encoding(): Illegal character encoding specified
