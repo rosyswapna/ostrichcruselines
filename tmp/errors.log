@@ -47,3 +47,27 @@
 [25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/JsHttpRequest.js): Permission denied
 [25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/utils.js): Permission denied
 [25-Feb-2015 09:55:18 UTC] 0:admin:current_user.inc:660: unlink(../company/0/js_cache/inserts.js): Permission denied
+[06-Mar-2015 11:05:26 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[06-Mar-2015 11:05:26 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[06-Mar-2015 11:05:38 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[06-Mar-2015 11:05:56 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[06-Mar-2015 11:05:56 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:37:42 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:37:42 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:37:53 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:37:53 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:37:55 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:37:59 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:38:00 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:38:54 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:38:57 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:38:57 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:40:08 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:40:25 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:41:04 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:42:00 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:42:00 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:50:32 UTC] 0:admin:main.inc:67: fopen(../../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:50:34 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 07:50:34 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied
+[12-Mar-2015 09:02:37 UTC] 0:admin:main.inc:67: fopen(../company/0/js_cache/date_picker.js): failed to open stream: Permission denied

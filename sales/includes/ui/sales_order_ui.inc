@@ -226,11 +226,13 @@ function display_order_summary($title, &$order, $editable_items=false)
 	$colspan = 6;
 	if ($order->trans_no!=0)
 		++$colspan;
-	start_row();
+	/*start_row();
 	label_cell(_("Shipping Charge"), "colspan=$colspan align=right");
 	small_amount_cells(null, 'freight_cost', price_format(get_post('freight_cost',0)));
 	label_cell('', 'colspan=2');
-	end_row();
+	end_row();*/
+	hidden('freight_cost',0);
+
 	$display_sub_total = price_format($total + input_num('freight_cost'));
 	label_row(_("Sub-total"), $display_sub_total, "colspan=$colspan align=right","align=right", 2);
 	$taxes = $order->get_taxes(input_num('freight_cost'));
