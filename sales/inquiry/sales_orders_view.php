@@ -113,6 +113,18 @@ function view_link($dummy, $order_no)
 	return  get_customer_trans_view_str($trans_type, $order_no);
 }
 
+function view_items($dummy, $order_no)
+{
+	global $trans_type;
+
+	$items = get_sales_order_items_as_array($order_no, $trans_type);
+	if($items)
+		return implode(',',$items);
+	else
+		return '';
+}
+
+
 function prt_link($row)
 {
 	global $trans_type;
@@ -258,7 +270,7 @@ $sql = get_sql_for_sales_orders_view($selected_customer, $trans_type, $_POST['Or
 	@$selected_stock_item, @$_POST['OrdersAfterDate'], @$_POST['OrdersToDate'], @$_POST['OrderReference'], $_POST['StockLocation'], $_POST['customer_id']);
 
 if ($trans_type == ST_SALESORDER)
-	$cols = array(
+	/*$cols = array(
 		_("Order #") => array('fun'=>'view_link'),
 		_("Ref") => array('type' => 'sorder.reference', 'ord' => '') ,
 		_("Customer") => array('type' => 'debtor.name' , 'ord' => '') ,
@@ -270,7 +282,22 @@ if ($trans_type == ST_SALESORDER)
 		_("Order Total") => array('type'=>'amount', 'ord'=>''),
 		'Type' => 'skip',
 		_("Currency") => array('align'=>'center')
+	);*/
+	      
+	$cols = array(
+		_("Order #") => array('fun'=>'view_link'),
+		_("Ref") => array('type' => 'sorder.reference', 'ord' => '') ,
+		_("Order Date") => array('type' =>  'date', 'ord' => ''),
+		_("Booking date") => array('type'=>'date', 'ord'=>''),
+		_("Customer") => array('type' => 'debtor.name' , 'ord' => '') ,
+		_("Item") ,
+		_("Narration") => array('type'=>'sorder.comments'),
+		_("Order Total") => array('type'=>'amount', 'ord'=>''),
+		'Type' => 'skip',
+		_("Currency") => array('align'=>'center')
 	);
+
+	
 else
 	$cols = array(
 		_("Quote #") => array('fun'=>'view_link'),

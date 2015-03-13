@@ -278,6 +278,28 @@ function get_sales_order_details($order_no, $trans_type) {
 
 	return db_query($sql, "Retreive order Line Items");
 }
+
+
+function get_sales_order_items_as_array($order_no, $trans_type) {
+	$sql = "SELECT ".TB_PREF."stock_master.description as item		
+		FROM ".TB_PREF."sales_order_details, ".TB_PREF."stock_master
+		WHERE ".TB_PREF."sales_order_details.stk_code = ".TB_PREF."stock_master.stock_id
+		AND order_no =" . db_escape($order_no) 
+		." AND trans_type = " . db_escape($trans_type) . " ORDER BY id";
+
+	$result = db_query($sql, "Retreive order Line Items");
+	$items = array();
+	if (db_num_rows($result) > 0)
+	{
+		while ($myrow = db_fetch($result))
+		{
+			$items[] = $myrow['item'];
+		}
+		return $items;
+	}
+
+	return false;
+}
 //----------------------------------------------------------------------------------------
 
 function read_sales_order($order_no, &$order, $trans_type)
@@ -433,7 +455,7 @@ function get_sql_for_sales_orders_view($selected_customer, $trans_type, $trans_n
 	$stock_item=null, $from='', $to='', $ref='', $location='', $customer_id=ALL_TEXT)
 {
 
-	$sql = "SELECT 
+	/*$sql = "SELECT 
 			sorder.order_no,
 			sorder.reference,
 			debtor.name,
@@ -444,6 +466,29 @@ function get_sql_for_sales_orders_view($selected_customer, $trans_type, $trans_n
 			."sorder.ord_date,
 			sorder.delivery_date,
 			sorder.deliver_to,
+			Sum(line.unit_price*line.quantity*(1-line.discount_percent))+freight_cost AS OrderValue,
+			sorder.type,
+			debtor.curr_code,
+			Sum(line.qty_sent) AS TotDelivered,
+			Sum(line.quantity) AS TotQuantity
+		FROM ".TB_PREF."sales_orders as sorder, "
+			.TB_PREF."sales_order_details as line, "
+			.TB_PREF."debtors_master as debtor, "
+			.TB_PREF."cust_branch as branch
+			WHERE sorder.order_no = line.order_no
+			AND sorder.trans_type = line.trans_type
+			AND sorder.trans_type = ".db_escape($trans_type)."
+			AND sorder.debtor_no = debtor.debtor_no
+			AND sorder.branch_code = branch.branch_code
+			AND debtor.debtor_no = branch.debtor_no";*/
+	$sql = "SELECT 
+			sorder.order_no,
+			sorder.reference,
+			sorder.ord_date,
+			sorder.delivery_date,
+			debtor.name,
+			line.description,
+			sorder.comments,
 			Sum(line.unit_price*line.quantity*(1-line.discount_percent))+freight_cost AS OrderValue,
 			sorder.type,
 			debtor.curr_code,
