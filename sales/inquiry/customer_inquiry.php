@@ -213,7 +213,7 @@ $sql = get_sql_for_customer_inquiry();
 //------------------------------------------------------------------------------------------------
 db_query("set @bal:=0");
 
-$cols = array(
+/*$cols = array(
 	_("Type") => array('fun'=>'systype_name', 'ord'=>''),
 	_("#") => array('fun'=>'trans_view', 'ord'=>''),
 	_("Order") => array('fun'=>'order_view'), 
@@ -225,6 +225,27 @@ $cols = array(
 	_("Currency") => array('align'=>'center'),
 	_("Debit") => array('align'=>'right', 'fun'=>'fmt_debit'), 
 	_("Credit") => array('align'=>'right','insert'=>true, 'fun'=>'fmt_credit'), 
+	_("RB") => array('align'=>'right', 'type'=>'amount'),
+		array('insert'=>true, 'fun'=>'gl_view'),
+		array('insert'=>true, 'fun'=>'credit_link'),
+		array('insert'=>true, 'fun'=>'edit_link'),
+		array('insert'=>true, 'fun'=>'prt_link')
+	);*/
+
+#, Order, Reference, date , Due, Customer, Item, Narration, type, debit, credit ++
+$cols = array(
+	_("#") => array('fun'=>'trans_view', 'ord'=>''),
+	_("Order") => array('fun'=>'order_view'), 
+	_("Reference"), 
+	_("Date") => array('name'=>'tran_date', 'type'=>'date', 'ord'=>'desc'),
+	_("Due Date") => array('type'=>'date', 'fun'=>'due_date'),
+	_("Customer") => array('ord'=>''), 
+	_("Item") => array('ord'=>''), 
+	_("Narration") => array('ord'=>''), 
+	_("Type") => array('fun'=>'systype_name', 'ord'=>''),
+	_("Debit") => array('align'=>'right', 'fun'=>'fmt_debit'), 
+	_("Credit") => array('align'=>'right','insert'=>true, 'fun'=>'fmt_credit'),
+	_("Currency") => array('align'=>'center'), 
 	_("RB") => array('align'=>'right', 'type'=>'amount'),
 		array('insert'=>true, 'fun'=>'gl_view'),
 		array('insert'=>true, 'fun'=>'credit_link'),

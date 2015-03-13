@@ -287,7 +287,7 @@ function get_sql_for_customer_inquiry()
     $date_after = date2sql($_POST['TransAfterDate']);
     $date_to = date2sql($_POST['TransToDate']);
 
-  	$sql = "SELECT 
+  	/*$sql = "SELECT 
   		trans.type, 
 		trans.trans_no, 
 		trans.order_, 
@@ -317,6 +317,42 @@ function get_sql_for_customer_inquiry()
 			.TB_PREF."debtors_master as debtor, "
 			.TB_PREF."cust_branch as branch
 		WHERE debtor.debtor_no = trans.debtor_no
+			AND trans.tran_date >= '$date_after'
+			AND trans.tran_date <= '$date_to'
+			AND trans.branch_code = branch.branch_code";
+*/
+		$sql = "SELECT 
+		trans.trans_no, 
+		trans.order_, 
+		trans.reference,
+		trans.tran_date, 
+		trans.due_date, 
+		debtor.name,
+		line.description,
+		comment.memo_,
+		trans.type,  
+		branch.br_name,
+		debtor.curr_code,
+		(trans.ov_amount + trans.ov_gst + trans.ov_freight 
+			+ trans.ov_freight_tax + trans.ov_discount)	AS TotalAmount, "; 
+   	if ($_POST['filterType'] != ALL_TEXT)
+		$sql .= "@bal := @bal+(trans.ov_amount + trans.ov_gst + trans.ov_freight + trans.ov_freight_tax + trans.ov_discount), ";
+
+		$sql .= "trans.alloc AS Allocated,
+		((trans.type = ".ST_SALESINVOICE.")
+			AND trans.due_date < '" . date2sql(Today()) . "') AS OverDue ,
+		Sum(line.quantity-line.qty_done) AS Outstanding
+		FROM "
+			.TB_PREF."debtor_trans as trans
+			LEFT JOIN ".TB_PREF."comments as comment ON  trans.trans_no = comment.id AND trans.type = comment.type
+			LEFT JOIN ".TB_PREF."debtor_trans_details as line
+				ON trans.trans_no=line.debtor_trans_no AND trans.type=line.debtor_trans_type,"
+			.TB_PREF."debtors_master as debtor, "
+			
+			.TB_PREF."cust_branch as branch
+		WHERE debtor.debtor_no = trans.debtor_no
+			
+			
 			AND trans.tran_date >= '$date_after'
 			AND trans.tran_date <= '$date_to'
 			AND trans.branch_code = branch.branch_code";
