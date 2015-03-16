@@ -221,5 +221,32 @@ function get_sql_for_search_dimensions($dim)
 			AND date_ <= '" . date2sql($_POST['ToDate']) . "'";
 	}
 	return $sql;
-}	
+}
+
+//--------------------------------------------------------------------------------------
+
+function get_sql_for_dimension_tx($dim)
+{	
+	$sql = "SELECT gl.tran_date,
+			gl.type,
+			cmt.memo_,
+			CONCAT(cm.account_code,' ',cm.account_name), 
+			amount,
+			gl.type_no
+		FROM ".TB_PREF."chart_master cm,".TB_PREF."gl_trans gl
+		LEFT JOIN  ".TB_PREF."comments cmt ON cmt.id = gl.type_no AND cmt.type = gl.type
+		WHERE gl.account = cm.account_code  AND 
+			(gl.type = ".ST_SUPPINVOICE." OR gl.type = ".ST_SALESINVOICE.")";
+			
+		if (isset($_POST['dimension_id']) && $_POST['dimension_id'] != "")
+			$sql .= " AND (dimension_id = ".db_escape($_POST['dimension_id'])." OR dimension2_id = ".db_escape($_POST['dimension_id']).")";
+		else
+			$sql .= " AND (dimension_id > 0 OR dimension2_id > 0 )";
+
+	//echo $sql;exit;
+
+		
+	return $sql;
+}
+	
 ?>

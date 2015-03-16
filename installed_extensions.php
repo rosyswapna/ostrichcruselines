@@ -6,8 +6,18 @@
 	FA extension system documentation.
 */
 
-$next_extension_id = 1; // unique id for next installed extension
+$next_extension_id = 2; // unique id for next installed extension
 
 $installed_extensions = array (
+  1 => 
+  array (
+    'package' => 'dimension',
+    'name' => 'dimension',
+    'version' => '-',
+    'available' => '',
+    'type' => 'extension',
+    'path' => 'modules/dimension',
+    'active' => false,
+  ),
 );
 ?>

@@ -6,5 +6,15 @@
 */
 
 $installed_extensions = array (
+  1 => 
+  array (
+    'package' => 'dimension',
+    'name' => 'dimension',
+    'version' => '-',
+    'available' => '',
+    'type' => 'extension',
+    'path' => 'modules/dimension',
+    'active' => 1,
+  ),
 );
 ?>
