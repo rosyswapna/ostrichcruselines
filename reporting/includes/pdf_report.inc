@@ -68,6 +68,8 @@ class FrontReport extends Cpdf
 	var $contactData; // contact data for sending emials/reportlanguage selection
 	
 	var $dest;	// destination: email or printer
+
+	var $total_row;
 	
 	function FrontReport($title, $filename, $size = 'A4', $fontsize = 9, $orientation = 'P', $margins = NULL, $excelColWidthFactor = NULL)
 	{
@@ -662,6 +664,27 @@ class FrontReport extends Cpdf
 
 		// restore user-specified draw color
 		$this->SetDrawColor($oldDrawColor[0], $oldDrawColor[1], $oldDrawColor[2]);		
+	}
+
+
+	function Header4()
+	{
+		global $path_to_root, $print_as_quote,
+			$print_invoice_no, $packing_slip, $dflt_lang; // FIXME should be passed as params
+
+		$doctype = $this->formData['doctype'];
+		$header2type = true;
+
+		$this->SetLang(@$this->formData['rep_lang'] ? $this->formData['rep_lang']
+ 			: ($_SESSION["wa_current_user"]->prefs->language ? $_SESSION["wa_current_user"]->prefs->language : $dflt_lang));
+
+ 		 // leave layout files names without path to enable including
+ 		 // modified versions from company/x/reporting directory
+		include("includes/doctext.inc");
+		include("includes/header4.inc");
+
+		$this->row = $temp;
+		$this->total_row = $temp1;
 	}
 
 	/**

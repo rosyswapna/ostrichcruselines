@@ -60,6 +60,17 @@ function print_document_link($doc_no, $link_text, $link=true, $type_no,
 				'PARAM_5' => $def_orientation);
 			break;
 		case ST_SALESINVOICE : // Sales Invoice
+			$rep = 711;
+			// from, to, currency, email, paylink, comments, orientation
+			$ar = array(
+				'PARAM_0' => $doc_no, 
+				'PARAM_1' => $doc_no, 
+				'PARAM_2' => '', 
+				'PARAM_3' => $email, 
+				'PARAM_4' => '',
+				'PARAM_5' => '', 
+				'PARAM_6' => $def_orientation);
+			break;
 		case ST_CUSTCREDIT : // Customer Credit Note
 			$rep = $type_no==ST_CUSTCREDIT ? 113 : 107;
 			// from, to, currency, email, paylink, comments, orientation

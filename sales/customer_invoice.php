@@ -203,6 +203,19 @@ function check_quantities()
 				$_SESSION['Items']->line_items[$line_no]->item_description = $line_desc;
 			}
 		}
+
+		if (isset($_POST['Line'.$line_no.'Price'])) {
+			$line_price = $_POST['Line'.$line_no.'Price'];
+			if (!check_num($line_price)) {
+				$line_price = price_format(0);
+			}
+			
+			$_SESSION['Items']->line_items[$line_no]->price =  input_num('Line'.$line_no.'Price');
+			
+		}
+
+		
+
 	}
  return $ok;
 }
@@ -318,6 +331,8 @@ function check_data()
 //-----------------------------------------------------------------------------
 if (isset($_POST['process_invoice']) && check_data()) {
 	$newinvoice=  $_SESSION['Items']->trans_no == 0;
+
+	//echo "<pre>";print_r($newinvoice);echo "</pre>";exit;
 	copy_to_cart();
 	if ($newinvoice) 
 		new_doc_date($_SESSION['Items']->document_date);
@@ -519,7 +534,12 @@ foreach ($_SESSION['Items']->line_items as $line=>$ln_itm) {
 
 	$line_total = ($ln_itm->qty_dispatched * $ln_itm->price * (1 - $ln_itm->discount_percent));
 
-	amount_cell($ln_itm->price);
+	//amount_cell($ln_itm->price);
+	amount_cells_ex(null,'Line'.$line.'Price',7,12,price_format($ln_itm->price));
+	
+	
+	
+
 	label_cell($ln_itm->tax_type_name);
 	label_cell($display_discount_percent, "nowrap align=right");
 	amount_cell($line_total);
@@ -592,6 +612,9 @@ submit_center_first('Update', _("Update"),
   _('Refresh document page'), true);
 submit_center_last('process_invoice', _("Process Invoice"),
   _('Check entered data and save document'), 'default');
+
+
+
 
 end_form();
 
