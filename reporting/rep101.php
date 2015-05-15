@@ -199,7 +199,10 @@ function print_customer_balances()
 			if ($trans['type'] == ST_SALESINVOICE){
 				//$rep->DateCol(3, 4,	$trans['due_date'], true);
 				$memo = get_comments_string(ST_SALESINVOICE, $trans['trans_no']);
-				$rep->TextColLines(3, 4, $memo, true);
+				if ($destination)
+					$rep->TextCol(3, 4, $memo, true);
+				else
+					$rep->TextColLines(3, 4, $memo, true);
 			}
 			$item[0] = $item[1] = 0.0;
 			if ($trans['type'] == ST_CUSTCREDIT || $trans['type'] == ST_CUSTPAYMENT || $trans['type'] == ST_BANKDEPOSIT)
