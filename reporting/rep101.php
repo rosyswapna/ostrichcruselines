@@ -115,7 +115,9 @@ function print_customer_balances()
 
 	$cols = array(0, 100, 130, 190,	250, 320, 385, 450,	515);
 
-	$headers = array(_('Trans Type'), _('#'), _('Date'), _('Due Date'), _('Charges'), _('Credits'),
+	//$headers = array(_('Trans Type'), _('#'), _('Date'), _('Due Date'), _('Charges'), _('Credits'),
+		//_('Allocated'), 	_('Outstanding'));
+	$headers = array(_('Trans Type'), _('#'), _('Date'), _('Narration'), _('Charges'), _('Credits'),
 		_('Allocated'), 	_('Outstanding'));
 
 	if ($show_balance)
@@ -194,8 +196,11 @@ function print_customer_balances()
 			$rep->TextCol(0, 1, $systypes_array[$trans['type']]);
 			$rep->TextCol(1, 2,	$trans['reference']);
 			$rep->DateCol(2, 3,	$trans['tran_date'], true);
-			if ($trans['type'] == ST_SALESINVOICE)
-				$rep->DateCol(3, 4,	$trans['due_date'], true);
+			if ($trans['type'] == ST_SALESINVOICE){
+				//$rep->DateCol(3, 4,	$trans['due_date'], true);
+				$memo = get_comments_string(ST_SALESINVOICE, $trans['trans_no']);
+				$rep->TextColLines(3, 4, $memo, true);
+			}
 			$item[0] = $item[1] = 0.0;
 			if ($trans['type'] == ST_CUSTCREDIT || $trans['type'] == ST_CUSTPAYMENT || $trans['type'] == ST_BANKDEPOSIT)
 				$trans['TotalAmount'] *= -1;
